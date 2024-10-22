@@ -1,0 +1,444 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #0d0d0d; 
+    color: #fff; 
+    scroll-behavior: smooth;
+}
+
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #3f00ff, #0d0d0d, #191970);
+    background-size: 300% 300%;
+    z-index: -1;
+    animation: animateBg 10s ease infinite;
+}
+
+@keyframes animateBg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+header {
+    background: rgba(0, 0, 0, 0.9); 
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+
+.logo h1 a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.logo h1 a:hover {
+    color: #8a2be2; 
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.nav-links li a:hover {
+    color: #8a2be2;
+}
+
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-icon i {
+    font-size: 2rem;
+    color: #fff;
+}
+
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        width: 100%;
+        text-align: right;
+        padding: 2rem;
+    }
+
+    
+    .nav-links.active {
+        display: flex;
+    }
+
+    
+    .menu-icon {
+        display: block;
+    }
+}
+
+
+#hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #0d0d0d, #191970);
+    position: relative; /* Para permitir a animação do fundo */
+    overflow: hidden; /* Para esconder o conteúdo que sai da seção */
+}
+
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #3f00ff, #0d0d0d, #191970);
+    background-size: 300% 300%;
+    z-index: -1;
+    animation: animateBg 10s ease infinite;
+}
+
+
+.hero-content h2 {
+    font-size: 4rem;
+    color: #fff;
+    text-transform: uppercase;
+    animation: slideIn 1.5s ease-in-out;
+    background: linear-gradient(to right, #8a2be2, #3f00ff);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero-content span {
+    color: #8a2be2;
+}
+
+.hero-content p {
+    margin: 1rem 0;
+    color: #ddd;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero-content .btn {
+    background: #8a2be2;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    text-transform: uppercase;
+    border-radius: 30px;
+    transition: background 0.3s ease;
+    animation: zoomIn 1.8s ease-in-out;
+}
+
+.hero-content .btn:hover {
+    background: #3f00ff;
+}
+
+
+#sobre {
+    padding: 5rem 2rem;
+    text-align: center;
+    background: #0d0d0d;
+}
+
+#sobre h2 {
+    font-size: 3rem; 
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+#sobre p {
+    max-width: 600px; 
+    margin: 0 auto;
+    font-size: 1.1rem; 
+    color: #bbb;
+    line-height: 1.6; 
+}
+
+
+#projetos {
+    padding: 5rem 2rem;
+    background: #191970;
+    text-align: center;
+}
+
+#projetos h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: #222;
+    padding: 2rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.project-card p {
+    margin-bottom: 1rem;
+    color: #aaa;
+}
+
+
+#habilidades {
+    padding: 5rem 2rem;
+    text-align: center;
+    background: #0d0d0d;
+}
+
+#habilidades h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skills span {
+    background: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.skills span:hover {
+    animation: bounce 0.5s;
+}
+
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px); 
+    }
+    60% {
+        transform: translateY(-7px); 
+    }
+}
+
+
+#contato {
+    padding: 5rem 2rem;
+    text-align: center;
+    background: transparent; 
+}
+
+#contato h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #fff; 
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+form label {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #f09d51; 
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1); 
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #f09d51; 
+    background: rgba(255, 255, 255, 0.2); 
+    outline: none;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: #ddd; 
+}
+
+form textarea {
+    resize: none; 
+    height: 150px; 
+}
+
+form button {
+    padding: 1rem;
+    background: #f09d51;
+    color: #fff;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #333; 
+}
+
+
+@keyframes fadeInField {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+form input,
+form textarea {
+    animation: fadeInField 0.6s ease-out;
+}
+
+
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+
+
+.contact-links {
+    margin-top: 2rem;
+}
+
+.contact-links h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.contact-link {
+    display: inline-block;
+    background: #333; 
+    color: #fff;
+    padding: 0.7rem 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 0.5rem 0;
+    transition: background 0.3s ease;
+}
+
+.contact-link:hover {
+    background: #8a2be2; 
+}
+
+.contact-link i {
+    margin-right: 0.5rem;
+}
+
+
+
+
+
+.profile-picture {
+    width: 150px; /* Largura do círculo */
+    height: 150px; /* Altura do círculo */
+    border-radius: 50%; /* Faz o div ser circular */
+    background-image: url('foto\ joao\ maia.png'); /* Substitua pelo caminho da sua foto */
+    background-size: cover; /* Cobre todo o círculo com a imagem */
+    background-position: center; /* Centraliza a imagem */
+    margin: 1rem auto; /* Centraliza horizontalmente e adiciona margem vertical */
+    border: 3px solid #8a2be2; /* Adiciona uma borda roxa */
+}
